@@ -3,6 +3,49 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestModule {
 
     @org.junit.jupiter.api.Test
+    void testSinglyLinkedList() {
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        assertNull(singlyLinkedList.valueAtIndex(0));
+        assertNull(singlyLinkedList.valueAtIndex(1));
+        singlyLinkedList.add(10);
+        singlyLinkedList.delete(0);
+        assertNull(singlyLinkedList.valueAtIndex(0));
+        assertNull(singlyLinkedList.valueAtIndex(1));
+
+        singlyLinkedList.insert(2, 10);
+        assertNull(singlyLinkedList.valueAtIndex(0));
+        assertNull(singlyLinkedList.valueAtIndex(1));
+        assertNull(singlyLinkedList.valueAtIndex(2));
+        assertNull(singlyLinkedList.valueAtIndex(3));
+
+        //singlyLinkedList.insert(0, 10);
+        singlyLinkedList.add(10);
+        assertEquals(10, singlyLinkedList.valueAtIndex(0));
+        assertNull(singlyLinkedList.valueAtIndex(1));
+        singlyLinkedList.delete(0);
+
+        singlyLinkedList.add(10);
+        assertEquals(10, singlyLinkedList.valueAtIndex(0));
+        assertNull(singlyLinkedList.valueAtIndex(1));
+
+        singlyLinkedList.add(20);
+        assertEquals(10, singlyLinkedList.valueAtIndex(0));
+        assertEquals(20, singlyLinkedList.valueAtIndex(1));
+        assertNull(singlyLinkedList.valueAtIndex(2));
+        assertNull(singlyLinkedList.valueAtIndex(3));
+
+        singlyLinkedList.add(30);
+        singlyLinkedList.add(40);
+        assertEquals(30, singlyLinkedList.valueAtIndex(2));
+
+        singlyLinkedList.delete(2);
+        assertEquals(40, singlyLinkedList.valueAtIndex(2));
+
+        singlyLinkedList.insert(2, 30);
+        assertEquals(30, singlyLinkedList.valueAtIndex(2));
+    }
+
+    @org.junit.jupiter.api.Test
     void testDynamicIntegerList() {
         DynamicIntegerList dynamicIntegerList = new DynamicIntegerList();
         assertEquals(0, dynamicIntegerList.length());
