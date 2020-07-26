@@ -29,6 +29,10 @@ class SinglyLinkedList {
 
     void insert(int index, Integer value) {
         int count = 0;
+
+        if (index == 0)
+            this.headNode = new Node(value, this.headNode);
+
         Node tempNode = this.headNode;
 
         while (count < index - 1) {
