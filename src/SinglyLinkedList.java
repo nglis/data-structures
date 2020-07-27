@@ -1,3 +1,5 @@
+// First index position is at 0
+
 class Node {
     Integer value;
     Node ref;
@@ -30,8 +32,10 @@ class SinglyLinkedList {
     void insert(int index, Integer value) {
         int count = 0;
 
-        if (index == 0)
+        if (index == 0) {
             this.headNode = new Node(value, this.headNode);
+            return;
+        }
 
         Node tempNode = this.headNode;
 
