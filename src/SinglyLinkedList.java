@@ -90,4 +90,19 @@ class SinglyLinkedList {
         return tempNode.value;
     }
 
+    void reverseList() {
+        Node prevNode = null;
+        Node currentNode = this.headNode;
+        Node nextNode;
+
+        while(currentNode != null) {
+            nextNode = currentNode.ref;
+            currentNode.ref = prevNode;
+            prevNode = currentNode;
+            currentNode = nextNode;
+        }
+
+        this.headNode = prevNode;
+    }
+
 }

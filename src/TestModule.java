@@ -42,7 +42,16 @@ class TestModule {
         assertEquals(40, singlyLinkedList.valueAtIndex(2));
 
         singlyLinkedList.insert(2, 30);
+        assertEquals(10, singlyLinkedList.valueAtIndex(0));
+        assertEquals(20, singlyLinkedList.valueAtIndex(1));
         assertEquals(30, singlyLinkedList.valueAtIndex(2));
+        assertEquals(40, singlyLinkedList.valueAtIndex(3));
+
+        singlyLinkedList.reverseList();
+        assertEquals(40, singlyLinkedList.valueAtIndex(0));
+        assertEquals(30, singlyLinkedList.valueAtIndex(1));
+        assertEquals(20, singlyLinkedList.valueAtIndex(2));
+        assertEquals(10, singlyLinkedList.valueAtIndex(3));
     }
 
     @org.junit.jupiter.api.Test
