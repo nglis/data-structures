@@ -90,7 +90,7 @@ class SinglyLinkedList {
         return tempNode.value;
     }
 
-    void iterativeListReversal() {
+    void reverseListIterative() {
         Node prevNode = null;
         Node currentNode = this.headNode;
         Node nextNode;
