@@ -47,7 +47,7 @@ class TestModule {
         assertEquals(30, singlyLinkedList.valueAtIndex(2));
         assertEquals(40, singlyLinkedList.valueAtIndex(3));
 
-        singlyLinkedList.reverseList();
+        singlyLinkedList.iterativeListReversal();
         assertEquals(40, singlyLinkedList.valueAtIndex(0));
         assertEquals(30, singlyLinkedList.valueAtIndex(1));
         assertEquals(20, singlyLinkedList.valueAtIndex(2));
