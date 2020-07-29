@@ -47,11 +47,16 @@ class TestModule {
         assertEquals(30, singlyLinkedList.valueAtIndex(2));
         assertEquals(40, singlyLinkedList.valueAtIndex(3));
 
-        singlyLinkedList.reverseListIterative();
+        singlyLinkedList.reverseListIteratively();
         assertEquals(40, singlyLinkedList.valueAtIndex(0));
         assertEquals(30, singlyLinkedList.valueAtIndex(1));
         assertEquals(20, singlyLinkedList.valueAtIndex(2));
         assertEquals(10, singlyLinkedList.valueAtIndex(3));
+
+
+        singlyLinkedList.reverseListIteratively();
+        singlyLinkedList.printListRecursively(singlyLinkedList.getHeadNode());
+        singlyLinkedList.printReversedListRecursively(singlyLinkedList.getHeadNode());
     }
 
     @org.junit.jupiter.api.Test

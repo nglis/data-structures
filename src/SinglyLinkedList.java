@@ -90,7 +90,7 @@ class SinglyLinkedList {
         return tempNode.value;
     }
 
-    void reverseListIterative() {
+    void reverseListIteratively() {
         Node prevNode = null;
         Node currentNode = this.headNode;
         Node nextNode;
@@ -103,6 +103,24 @@ class SinglyLinkedList {
         }
 
         this.headNode = prevNode;
+    }
+
+    Node getHeadNode() {
+        return this.headNode;
+    }
+
+    void printListRecursively(Node printNode) {
+        if (printNode == null) return;
+
+        System.out.println(printNode.value);
+        printListRecursively(printNode.ref);
+    }
+
+    void printReversedListRecursively(Node printNode) {
+        if (printNode == null) return;
+
+        printReversedListRecursively(printNode.ref);
+        System.out.println(printNode.value);
     }
 
 }
