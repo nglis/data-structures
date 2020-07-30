@@ -105,6 +105,18 @@ class SinglyLinkedList {
         this.headNode = prevNode;
     }
 
+    void reverseListRecursively(Node currentNode) {
+        if (currentNode.ref == null) {
+            this.headNode = currentNode;
+            return;
+        }
+
+        reverseListRecursively(currentNode.ref);
+        Node tempNode = currentNode.ref;
+        tempNode.ref = currentNode;
+        currentNode.ref = null;
+    }
+
     Node getHeadNode() {
         return this.headNode;
     }

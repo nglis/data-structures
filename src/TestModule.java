@@ -55,8 +55,11 @@ class TestModule {
 
 
         singlyLinkedList.reverseListIteratively();
-        singlyLinkedList.printListRecursively(singlyLinkedList.getHeadNode());
-        singlyLinkedList.printReversedListRecursively(singlyLinkedList.getHeadNode());
+        //singlyLinkedList.printListRecursively(singlyLinkedList.getHeadNode());
+
+        singlyLinkedList.reverseListRecursively(singlyLinkedList.getHeadNode());
+        //singlyLinkedList.printListRecursively(singlyLinkedList.getHeadNode());
+        //singlyLinkedList.printReversedListRecursively(singlyLinkedList.getHeadNode());
     }
 
     @org.junit.jupiter.api.Test
