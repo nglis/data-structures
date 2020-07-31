@@ -1,6 +1,17 @@
+package TestModule;
+
+import DynamicIntegerList.DynamicIntegerList;
+import SinglyLinkedList.SinglyLinkedList;
+import DoublyLinkedList.DoublyLinkedList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void testDoublyLinkedList() {
+
+    }
 
     @org.junit.jupiter.api.Test
     void testSinglyLinkedList() {
@@ -71,20 +82,20 @@ class TestModule {
         assertEquals(1, dynamicIntegerList.length());
         assertEquals(10, dynamicIntegerList.getNumAtIndex(0));
         assertNull(dynamicIntegerList.getNumAtIndex(1));
-        assertEquals(2, dynamicIntegerList.dynamicList.length);
+        assertEquals(1, dynamicIntegerList.length());
 
         dynamicIntegerList.add(20);
         assertEquals(2, dynamicIntegerList.length());
         assertEquals(10, dynamicIntegerList.getNumAtIndex(0));
         assertEquals(20, dynamicIntegerList.getNumAtIndex(1));
-        assertEquals(2, dynamicIntegerList.dynamicList.length);
+        assertEquals(2, dynamicIntegerList.length());
 
         dynamicIntegerList.add(30);
         assertEquals(3, dynamicIntegerList.length());
         assertEquals(10, dynamicIntegerList.getNumAtIndex(0));
         assertEquals(20, dynamicIntegerList.getNumAtIndex(1));
         assertEquals(30, dynamicIntegerList.getNumAtIndex(2));
-        assertEquals(4, dynamicIntegerList.dynamicList.length);
+        assertEquals(3, dynamicIntegerList.length());
 
         dynamicIntegerList.add(40);
         dynamicIntegerList.add(50);
@@ -94,7 +105,6 @@ class TestModule {
         assertEquals(10, dynamicIntegerList.getNumAtIndex(0));
         assertEquals(40, dynamicIntegerList.getNumAtIndex(3));
         assertEquals(70, dynamicIntegerList.getNumAtIndex(6));
-        assertEquals(8, dynamicIntegerList.dynamicList.length);
 
         dynamicIntegerList.delete(6);
         assertEquals(6, dynamicIntegerList.length());
@@ -109,6 +119,6 @@ class TestModule {
 
         dynamicIntegerList.insert(4, 80);
 
-        dynamicIntegerList.printAll();
+        //dynamicIntegerList.printAll();
     }
 }

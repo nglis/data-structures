@@ -1,6 +1,6 @@
-// Max size is currently Integer.MAX_VALUE - 1
+package DynamicIntegerList;// Max size is currently Integer.MAX_VALUE - 1
 
-class DynamicIntegerList {
+public class DynamicIntegerList {
 
     // Define max size of array
     private Integer maxArraySize = Integer.MAX_VALUE;
@@ -9,22 +9,22 @@ class DynamicIntegerList {
     private Integer size;
 
     // Define empty array
-    Integer[] dynamicList;
+    private Integer[] dynamicList;
 
     // Class constructor
-    DynamicIntegerList() {
+    public DynamicIntegerList() {
         super();
         this.size = 0;
         this.dynamicList = new Integer[0];
     }
 
     // Get amount of elements stored in this list
-    Integer length() {
+    public Integer length() {
         return this.size;
     }
 
     // Return the number at given index position
-    Integer getNumAtIndex(int index) {
+    public Integer getNumAtIndex(int index) {
         if (index < size)
             return this.dynamicList[index];
 
@@ -38,7 +38,7 @@ class DynamicIntegerList {
     }
 
     // Add a value to the end of the list
-    void add(int num) {
+    public void add(int num) {
         if (this.size >= maxArraySize) return;
         if (this.size >= this.dynamicList.length)
             this.increaseListSize();
@@ -49,7 +49,7 @@ class DynamicIntegerList {
     }
 
     // Insert a value at a given index position
-    void insert(int index, int num) {
+    public void insert(int index, int num) {
         if(index > this.size) return;
 
         if(this.size >= maxArraySize) return;
@@ -65,7 +65,7 @@ class DynamicIntegerList {
     }
 
     // Delete a value at a given index position
-    void delete(int index) {
+    public void delete(int index) {
         for (int i = index; i < this.size - 1; i++)
             this.dynamicList[i] = this.dynamicList[i + 1];
 
@@ -94,7 +94,7 @@ class DynamicIntegerList {
 
     }
 
-    void printAll() {
+    public void printAll() {
         for (Integer num: this.dynamicList)
             System.out.println(num);
     }

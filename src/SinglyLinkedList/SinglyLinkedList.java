@@ -1,4 +1,4 @@
-// First index position is at 0
+package SinglyLinkedList;// First index position is at 0
 
 class Node {
     Integer value;
@@ -10,11 +10,11 @@ class Node {
     }
 }
 
-class SinglyLinkedList {
+public class SinglyLinkedList {
 
     private Node headNode;
 
-    void add(Integer value) {
+    public void add(Integer value) {
         if (this.headNode == null){
             headNode = new Node(value, null);
             return;
@@ -29,7 +29,7 @@ class SinglyLinkedList {
         tempNode.ref = new Node(value, null);
     }
 
-    void insert(int index, Integer value) {
+    public void insert(int index, Integer value) {
         int count = 0;
 
         if (index == 0) {
@@ -50,7 +50,7 @@ class SinglyLinkedList {
         tempNode.ref = new Node(value, tempNode.ref);
     }
 
-    void delete(int index) {
+    public void delete(int index) {
         if (this.headNode == null) return;
         if (index == 0) {
             this.headNode = headNode.ref;
@@ -73,7 +73,7 @@ class SinglyLinkedList {
 
     }
 
-    Integer valueAtIndex(int index) {
+    public Integer valueAtIndex(int index) {
         if(this.headNode == null) return null;
 
         int count = 0;
@@ -90,7 +90,7 @@ class SinglyLinkedList {
         return tempNode.value;
     }
 
-    void reverseListIteratively() {
+    public void reverseListIteratively() {
         Node prevNode = null;
         Node currentNode = this.headNode;
         Node nextNode;
@@ -105,7 +105,7 @@ class SinglyLinkedList {
         this.headNode = prevNode;
     }
 
-    void reverseListRecursively(Node currentNode) {
+    public void reverseListRecursively(Node currentNode) {
         if (currentNode.ref == null) {
             this.headNode = currentNode;
             return;
@@ -117,18 +117,18 @@ class SinglyLinkedList {
         currentNode.ref = null;
     }
 
-    Node getHeadNode() {
+    public Node getHeadNode() {
         return this.headNode;
     }
 
-    void printListRecursively(Node printNode) {
+    public void printListRecursively(Node printNode) {
         if (printNode == null) return;
 
         System.out.println(printNode.value);
         printListRecursively(printNode.ref);
     }
 
-    void printReversedListRecursively(Node printNode) {
+    public void printReversedListRecursively(Node printNode) {
         if (printNode == null) return;
 
         printReversedListRecursively(printNode.ref);
