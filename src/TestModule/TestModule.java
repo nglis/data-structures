@@ -10,7 +10,13 @@ class TestModule {
 
     @org.junit.jupiter.api.Test
     void testDoublyLinkedList() {
-
+        DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
+        doublyLinkedList.insertAtHead(0);
+        doublyLinkedList.insertAtHead(-1);
+        doublyLinkedList.insertAtHead(-2);
+        doublyLinkedList.insertAtTail(1);
+        doublyLinkedList.insertAtTail(2);
+        //doublyLinkedList.printListIteratively();
     }
 
     @org.junit.jupiter.api.Test
