@@ -16,6 +16,10 @@ public class DoublyLinkedList {
 
     private Node headNode = null;
 
+    public Node getHeadNode() {
+        return this.headNode;
+    }
+
     public void insertAtHead(Integer value) {
         Node newHeadNode = new Node(value, null, this.headNode);
         this.headNode = new Node(value, null, this.headNode);
@@ -54,6 +58,13 @@ public class DoublyLinkedList {
             System.out.println(tempNode.value);
             tempNode = tempNode.next;
         }
+    }
+
+    public void printReversedListRecursively(Node tempNode) {
+        if (tempNode == null) return;
+
+        printReversedListRecursively(tempNode.next);
+        System.out.println(tempNode.value);
     }
 
     /* public void delete(int index) {

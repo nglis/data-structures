@@ -17,6 +17,7 @@ class TestModule {
         doublyLinkedList.insertAtTail(1);
         doublyLinkedList.insertAtTail(2);
         //doublyLinkedList.printListIteratively();
+        //doublyLinkedList.printReversedListRecursively(doublyLinkedList.getHeadNode());
     }
 
     @org.junit.jupiter.api.Test
