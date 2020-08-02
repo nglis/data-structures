@@ -84,9 +84,14 @@ public class DoublyLinkedList {
         System.out.println(tempNode.value);
     }
 
-     /* public void delete(int index) {
+     public void delete(int index) {
         Node tempNode = headNode;
         int count = 0;
+
+        if (index == 0) {
+            this.headNode = tempNode.next;
+            return;
+        }
 
         while (count < index) {
             tempNode = tempNode.next;
@@ -95,6 +100,6 @@ public class DoublyLinkedList {
 
         Node prevNode = tempNode.prev;
         prevNode.next = tempNode.next;
-    } */
+    }
 
 }

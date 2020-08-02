@@ -17,9 +17,10 @@ class TestModule {
         doublyLinkedList.insertAtTail(4);
         doublyLinkedList.insertAtTail(5);
         doublyLinkedList.delete(1);
+        doublyLinkedList.delete(0);
 //        doublyLinkedList.printListIteratively();
 //        doublyLinkedList.printReversedListIteratively();
-        doublyLinkedList.printReversedListRecursively(doublyLinkedList.getHeadNode());
+//        doublyLinkedList.printReversedListRecursively(doublyLinkedList.getHeadNode());
     }
 
     @org.junit.jupiter.api.Test
