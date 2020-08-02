@@ -3,10 +3,32 @@ package TestModule;
 import DynamicIntegerList.DynamicIntegerList;
 import SinglyLinkedList.SinglyLinkedList;
 import DoublyLinkedList.DoublyLinkedList;
+import Stack.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void testStack() {
+        Stack stack = new Stack();
+        assertTrue(stack.isEmpty());
+        stack.push(1);
+        assertEquals(1, stack.top());
+        stack.push(2);
+        stack.push(3);
+        stack.push(4);
+        stack.push(5);
+        assertEquals(5, stack.top());
+        stack.pop();
+        stack.push(6);
+        assertEquals(6, stack.top());
+        assertFalse(stack.isEmpty());
+//        stack.print();
+//        System.out.println(stack.stack[0]);
+//        System.out.println(stack.stack[4]);
+//        System.out.println(stack.stack.length);
+    }
 
     @org.junit.jupiter.api.Test
     void testDoublyLinkedList() {
