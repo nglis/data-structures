@@ -11,13 +11,15 @@ class TestModule {
     @org.junit.jupiter.api.Test
     void testDoublyLinkedList() {
         DoublyLinkedList doublyLinkedList = new DoublyLinkedList();
-        doublyLinkedList.insertAtHead(0);
-        doublyLinkedList.insertAtHead(-1);
-        doublyLinkedList.insertAtHead(-2);
-        doublyLinkedList.insertAtTail(1);
-        doublyLinkedList.insertAtTail(2);
-        //doublyLinkedList.printListIteratively();
-        //doublyLinkedList.printReversedListRecursively(doublyLinkedList.getHeadNode());
+        doublyLinkedList.insertAtHead(3);
+        doublyLinkedList.insertAtHead(2);
+        doublyLinkedList.insertAtHead(1);
+        doublyLinkedList.insertAtTail(4);
+        doublyLinkedList.insertAtTail(5);
+        doublyLinkedList.delete(1);
+//        doublyLinkedList.printListIteratively();
+//        doublyLinkedList.printReversedListIteratively();
+        doublyLinkedList.printReversedListRecursively(doublyLinkedList.getHeadNode());
     }
 
     @org.junit.jupiter.api.Test
