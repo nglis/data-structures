@@ -4,10 +4,36 @@ import DynamicIntegerList.DynamicIntegerList;
 import SinglyLinkedList.SinglyLinkedList;
 import DoublyLinkedList.DoublyLinkedList;
 import Stack.Stack;
+import Stack.ReverseString;
+import Stack.LinkedListStack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void reverseStringStack() {
+        ReverseString reverseString = new ReverseString();
+        assertEquals("olleh", reverseString.ReverseStringStack("hello"));
+        assertEquals("race car", reverseString.ReverseStringStack("rac ecar"));
+        assertEquals("", reverseString.ReverseStringStack(""));
+    }
+
+    @org.junit.jupiter.api.Test
+    void testLinkedListStack() {
+        LinkedListStack stack = new LinkedListStack();
+        assertTrue(stack.isEmpty());
+        stack.push(0);
+        stack.push(1);
+        stack.push(2);
+        assertFalse(stack.isEmpty());
+        assertEquals(2, stack.top());
+        stack.pop();
+        assertEquals(1, stack.top());
+        stack.pop();
+        stack.pop();
+        assertTrue(stack.isEmpty());
+    }
 
     @org.junit.jupiter.api.Test
     void testStack() {
