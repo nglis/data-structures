@@ -6,17 +6,18 @@ public class ReverseString {
     public String ReverseStringStack(String str) {
         LinkedListStack linkedListStack =  new LinkedListStack();
         char[] stringCharacters = str.toCharArray();
+        int characterCount = stringCharacters.length;
 
         for (char c : stringCharacters) {
             linkedListStack.push(c);
         }
 
-        String reversedString = "";
+        char[] charsReversed = new char[characterCount];
 
-        while(!linkedListStack.isEmpty()) {
-            reversedString += (char) linkedListStack.pop();
+        for (int i = 0; i < charsReversed.length; i++) {
+            charsReversed[i] = (char) linkedListStack.pop();
         }
 
-        return reversedString;
+        return new String(charsReversed);
     }
 }
