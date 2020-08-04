@@ -6,10 +6,27 @@ import DoublyLinkedList.DoublyLinkedList;
 import Stack.Stack;
 import Stack.ReverseString;
 import Stack.LinkedListStack;
+import Stack.BalancedParentheses;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void BalancedParenthesesStack() {
+        BalancedParentheses balancedParentheses = new BalancedParentheses();
+        assertTrue(balancedParentheses.BalancedParenthesesStack("{}"));
+        assertTrue(balancedParentheses.BalancedParenthesesStack(""));
+        assertFalse(balancedParentheses.BalancedParenthesesStack("}"));
+        assertTrue(balancedParentheses.BalancedParenthesesStack("(())"));
+        assertFalse(balancedParentheses.BalancedParenthesesStack("())"));
+        assertTrue(balancedParentheses.BalancedParenthesesStack("{([])}"));
+        assertFalse(balancedParentheses.BalancedParenthesesStack("[{]}"));
+        assertFalse(balancedParentheses.BalancedParenthesesStack("{(])}]"));
+        assertTrue(balancedParentheses.BalancedParenthesesStack("{Test}(Test[Test])[]{(Test)}"));
+
+
+    }
 
     @org.junit.jupiter.api.Test
     void reverseStringStack() {
