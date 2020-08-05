@@ -3,7 +3,7 @@ package Stack;
 public class ReverseString {
 
     // Reverse a string using a linked list
-    public String ReverseStringStack(String str) {
+    public String reverseStringStack(String str) {
         LinkedListStack linkedListStack =  new LinkedListStack();
         char[] stringCharacters = str.toCharArray();
         int characterCount = stringCharacters.length;

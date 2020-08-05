@@ -2,7 +2,7 @@ package Stack;
 
 public class BalancedParentheses {
 
-    public Boolean BalancedParenthesesStack(String input) {
+    public Boolean balancedParenthesesStack(String input) {
         LinkedListStack linkedListStack = new LinkedListStack();
 
         char[] inputChars = input.toCharArray();
