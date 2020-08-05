@@ -6,6 +6,7 @@ import DoublyLinkedList.DoublyLinkedList;
 import Stack.Stack;
 import Stack.ReverseString;
 import Stack.LinkedListStack;
+import Stack.EvaluateExpressions;
 import Stack.BalancedParentheses;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,27 +14,35 @@ import static org.junit.jupiter.api.Assertions.*;
 class TestModule {
 
     @org.junit.jupiter.api.Test
+    void EvaluateExpressionStack() {
+        EvaluateExpressions evaluateExpressions = new EvaluateExpressions();
+        assertEquals(2, evaluateExpressions.evaluatePostfix("11+"));
+        assertEquals(17, evaluateExpressions.evaluatePostfix("23*54*+9-"));
+        assertEquals(2, evaluateExpressions.evaluatePrefix("+11"));
+        assertEquals(17, evaluateExpressions.evaluatePrefix("-+*23*549"));
+
+    }
+
+    @org.junit.jupiter.api.Test
     void BalancedParenthesesStack() {
         BalancedParentheses balancedParentheses = new BalancedParentheses();
-        assertTrue(balancedParentheses.BalancedParenthesesStack("{}"));
-        assertTrue(balancedParentheses.BalancedParenthesesStack(""));
-        assertFalse(balancedParentheses.BalancedParenthesesStack("}"));
-        assertTrue(balancedParentheses.BalancedParenthesesStack("(())"));
-        assertFalse(balancedParentheses.BalancedParenthesesStack("())"));
-        assertTrue(balancedParentheses.BalancedParenthesesStack("{([])}"));
-        assertFalse(balancedParentheses.BalancedParenthesesStack("[{]}"));
-        assertFalse(balancedParentheses.BalancedParenthesesStack("{(])}]"));
-        assertTrue(balancedParentheses.BalancedParenthesesStack("{Test}(Test[Test])[]{(Test)}"));
-
-
+        assertTrue(balancedParentheses.balancedParenthesesStack("{}"));
+        assertTrue(balancedParentheses.balancedParenthesesStack(""));
+        assertFalse(balancedParentheses.balancedParenthesesStack("}"));
+        assertTrue(balancedParentheses.balancedParenthesesStack("(())"));
+        assertFalse(balancedParentheses.balancedParenthesesStack("())"));
+        assertTrue(balancedParentheses.balancedParenthesesStack("{([])}"));
+        assertFalse(balancedParentheses.balancedParenthesesStack("[{]}"));
+        assertFalse(balancedParentheses.balancedParenthesesStack("{(])}]"));
+        assertTrue(balancedParentheses.balancedParenthesesStack("{Test}(Test[Test])[]{(Test)}"));
     }
 
     @org.junit.jupiter.api.Test
     void reverseStringStack() {
         ReverseString reverseString = new ReverseString();
-        assertEquals("olleh", reverseString.ReverseStringStack("hello"));
-        assertEquals("race car", reverseString.ReverseStringStack("rac ecar"));
-        assertEquals("", reverseString.ReverseStringStack(""));
+        assertEquals("olleh", reverseString.reverseStringStack("hello"));
+        assertEquals("race car", reverseString.reverseStringStack("rac ecar"));
+        assertEquals("", reverseString.reverseStringStack(""));
     }
 
     @org.junit.jupiter.api.Test
