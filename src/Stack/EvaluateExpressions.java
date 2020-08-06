@@ -2,6 +2,43 @@ package Stack;
 
 public class EvaluateExpressions {
 
+    public String infixToPostfix(String expression) {
+        LinkedListStack linkedListStack = new LinkedListStack();
+
+        char[] chars = expression.toCharArray();
+        String postFix = "";
+
+        for (char c : chars) {
+            if (c == '+' || c == '-' || c == '/' || c == '*') {
+                while (!linkedListStack.isEmpty() && equalOrHigherPrecedence((char) linkedListStack.top(), c)) {
+                    postFix += (char) linkedListStack.pop();
+                }
+                linkedListStack.push(c);
+            } else if (c == '(') {
+                linkedListStack.push(c);
+            } else if (c == ')') {
+                while(!linkedListStack.isEmpty() && linkedListStack.top() != '(') {
+                    postFix += (char) linkedListStack.pop();
+                }
+                linkedListStack.pop();
+            } else {
+                postFix += c;
+            }
+        }
+
+        while (!linkedListStack.isEmpty()) {
+            postFix += (char) linkedListStack.pop();
+        }
+
+        return postFix;
+    }
+
+    private Boolean equalOrHigherPrecedence(char a, char b) {
+        return ((a == '/' || a == '*') && (b == '+' || b == '-')) ||
+                ((a == '+' || a == '-') && (b == '+' || b == '-')) ||
+                ((a == '/' || a == '*') && (b == '/' || b == '*'));
+    }
+
     // Only works with single digit numbers
     public int evaluatePostfix(String expression) {
         LinkedListStack linkedListStack = new LinkedListStack();

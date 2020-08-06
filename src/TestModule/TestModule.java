@@ -20,6 +20,10 @@ class TestModule {
         assertEquals(17, evaluateExpressions.evaluatePostfix("23*54*+9-"));
         assertEquals(2, evaluateExpressions.evaluatePrefix("+11"));
         assertEquals(17, evaluateExpressions.evaluatePrefix("-+*23*549"));
+        assertEquals("12+", evaluateExpressions.infixToPostfix("1+2"));
+        assertEquals("ABC*+DE*-", evaluateExpressions.infixToPostfix("A+B*C-D*E"));
+        assertEquals("AB+C*D-E*", evaluateExpressions.infixToPostfix("((A+B)*C-D)*E"));
+        assertEquals("ABC+*", evaluateExpressions.infixToPostfix("A*(B+C)"));
 
     }
 
