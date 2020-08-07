@@ -1,6 +1,7 @@
 package TestModule;
 
 import DynamicIntegerList.DynamicIntegerList;
+import Queue.QueueArray;
 import SinglyLinkedList.SinglyLinkedList;
 import DoublyLinkedList.DoublyLinkedList;
 import Stack.Stack;
@@ -12,6 +13,28 @@ import Stack.BalancedParentheses;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void EvaluateQueueArray() {
+        QueueArray queueArray = new QueueArray();
+        assertTrue(queueArray.isEmpty());
+        queueArray.enqueue(5);
+        assertEquals(5, queueArray.front());
+        queueArray.enqueue(10);
+        queueArray.enqueue(20);
+        queueArray.enqueue(30);
+        queueArray.enqueue(20);
+        queueArray.enqueue(30);
+        queueArray.enqueue(20);
+        assertEquals(5, queueArray.front());
+        assertEquals(5, queueArray.dequeue());
+        assertEquals(10, queueArray.dequeue());
+        assertEquals(20, queueArray.dequeue());
+        queueArray.enqueue(10);
+        assertEquals(30, queueArray.dequeue());
+        assertEquals(20, queueArray.front());
+        assertFalse(queueArray.isEmpty());
+    }
 
     @org.junit.jupiter.api.Test
     void EvaluateExpressionStack() {
