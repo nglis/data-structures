@@ -16,6 +16,7 @@ public class QueueArray {
 
     public void enqueue(int value) {
         if ((this.end + 1) % SIZE == this.front) {
+            // Array is full
             return;
         } else if (isEmpty()) {
             this.front = 0;
