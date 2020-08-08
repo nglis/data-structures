@@ -2,6 +2,7 @@ package TestModule;
 
 import DynamicIntegerList.DynamicIntegerList;
 import Queue.QueueArray;
+import Queue.QueueLinkedList;
 import SinglyLinkedList.SinglyLinkedList;
 import DoublyLinkedList.DoublyLinkedList;
 import Stack.Stack;
@@ -13,6 +14,22 @@ import Stack.BalancedParentheses;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void EvaluateQueueLinkedList() {
+        QueueLinkedList queueLinkedList = new QueueLinkedList();
+        assertTrue(queueLinkedList.isEmpty());
+        queueLinkedList.enqueue(1);
+        queueLinkedList.enqueue(2);
+        queueLinkedList.enqueue(3);
+//        queueLinkedList.printAll();
+        assertEquals(1, queueLinkedList.top());
+        assertEquals(1, queueLinkedList.dequeue());
+        assertEquals(2, queueLinkedList.dequeue());
+        assertEquals(3, queueLinkedList.dequeue());
+        assertEquals(-1, queueLinkedList.dequeue());
+        assertTrue(queueLinkedList.isEmpty());
+    }
 
     @org.junit.jupiter.api.Test
     void EvaluateQueueArray() {
