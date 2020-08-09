@@ -29,6 +29,7 @@ class TestModule {
         assertEquals(3, queueLinkedList.dequeue());
         assertEquals(-1, queueLinkedList.dequeue());
         assertTrue(queueLinkedList.isEmpty());
+//        queueLinkedList.printAll();
     }
 
     @org.junit.jupiter.api.Test
