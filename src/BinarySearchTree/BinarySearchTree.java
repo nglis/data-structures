@@ -1,6 +1,21 @@
 package BinarySearchTree;
 
+class BSTNode {
+    int value;
+    BSTNode left;
+    BSTNode right;
+
+    BSTNode(int value, BSTNode left, BSTNode right) {
+        this.value = value;
+        this.left = left;
+        this.right = right;
+    }
+}
+
 public class BinarySearchTree {
+
+    public BSTNode root;
+
     public BSTNode insert(BSTNode root, int value) {
         if (root == null)
             root = new BSTNode(value, null, null);
@@ -21,5 +36,31 @@ public class BinarySearchTree {
             return search(root.left, value);
         else
             return search(root.right, value);
+    }
+
+    public int min(BSTNode root) {
+        if (root == null)
+            return -1;
+        else if (root.left == null)
+            return root.value;
+        else
+            return min(root.left);
+    }
+
+    public int max(BSTNode root) {
+        if (root == null)
+            return -1;
+        else if (root.right == null)
+            return root.value;
+        else
+            return max(root.right);
+    }
+
+    public int height(BSTNode root) {
+        // Counts number of edges - O(n)
+        if (root == null)
+            return -1;
+
+        return Integer.max(height(root.left), height(root.right)) + 1;
     }
 }

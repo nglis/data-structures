@@ -1,7 +1,6 @@
 package TestModule;
 
 import BinarySearchTree.BinarySearchTree;
-import BinarySearchTree.BSTNode;
 import DynamicIntegerList.DynamicIntegerList;
 import Queue.QueueArray;
 import Queue.QueueLinkedList;
@@ -12,28 +11,32 @@ import Stack.ReverseString;
 import Stack.LinkedListStack;
 import Stack.EvaluateExpressions;
 import Stack.BalancedParentheses;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void EvaluateBinarySearchTree() {
-        BSTNode root = new BSTNode();
-        BinarySearchTree binarySearchTree = new BinarySearchTree();
-        root = binarySearchTree.insert(root, 10);
-        assertTrue(binarySearchTree.search(root, 10));
-        root = binarySearchTree.insert(root, 5);
-        root = binarySearchTree.insert(root, 15);
-        root = binarySearchTree.insert(root, 12);
-        root = binarySearchTree.insert(root, 20);
-        root = binarySearchTree.insert(root, 25);
-        assertTrue(binarySearchTree.search(root, 15));
-        assertTrue(binarySearchTree.search(root, 10));
-        assertTrue(binarySearchTree.search(root, 20));
-        assertFalse(binarySearchTree.search(root, 19));
-        assertFalse(binarySearchTree.search(root, 1));
-        assertFalse(binarySearchTree.search(root, 30));
+        BinarySearchTree bst = new BinarySearchTree();
+        bst.root = bst.insert(bst.root, 10);
+        assertTrue(bst.search(bst.root, 10));
+        bst.root = bst.insert(bst.root, 5);
+        assertEquals(1, bst.height(bst.root));
+        bst.root = bst.insert(bst.root, 15);
+        bst.root = bst.insert(bst.root, 12);
+        bst.root = bst.insert(bst.root, 20);
+        bst.root = bst.insert(bst.root, 25);
+        assertTrue(bst.search(bst.root, 15));
+        assertTrue(bst.search(bst.root, 10));
+        assertTrue(bst.search(bst.root, 20));
+        assertFalse(bst.search(bst.root, 19));
+        assertFalse(bst.search(bst.root, 1));
+        assertFalse(bst.search(bst.root, 30));
+        assertEquals(5, bst.min(bst.root));
+        assertEquals(25, bst.max(bst.root));
+        assertEquals(3, bst.height(bst.root));
     }
 
     @org.junit.jupiter.api.Test
