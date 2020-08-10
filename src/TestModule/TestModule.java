@@ -1,5 +1,7 @@
 package TestModule;
 
+import BinarySearchTree.BinarySearchTree;
+import BinarySearchTree.BSTNode;
 import DynamicIntegerList.DynamicIntegerList;
 import Queue.QueueArray;
 import Queue.QueueLinkedList;
@@ -14,6 +16,25 @@ import Stack.BalancedParentheses;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestModule {
+
+    @org.junit.jupiter.api.Test
+    void EvaluateBinarySearchTree() {
+        BSTNode root = new BSTNode();
+        BinarySearchTree binarySearchTree = new BinarySearchTree();
+        root = binarySearchTree.insert(root, 10);
+        assertTrue(binarySearchTree.search(root, 10));
+        root = binarySearchTree.insert(root, 5);
+        root = binarySearchTree.insert(root, 15);
+        root = binarySearchTree.insert(root, 12);
+        root = binarySearchTree.insert(root, 20);
+        root = binarySearchTree.insert(root, 25);
+        assertTrue(binarySearchTree.search(root, 15));
+        assertTrue(binarySearchTree.search(root, 10));
+        assertTrue(binarySearchTree.search(root, 20));
+        assertFalse(binarySearchTree.search(root, 19));
+        assertFalse(binarySearchTree.search(root, 1));
+        assertFalse(binarySearchTree.search(root, 30));
+    }
 
     @org.junit.jupiter.api.Test
     void EvaluateQueueLinkedList() {
