@@ -1,17 +1,26 @@
 package Queue;
 
-class Node {
+class Node<T> {
 
-    int value;
+    T value;
     Node ref;
 
-    Node(int value, Node ref) {
+    Node(T value, Node ref) {
         this.value = value;
         this.ref = ref;
     }
+
+    int getInt() {
+        try {
+            return Integer.parseInt(this.value.toString());
+        } catch (Exception e) {
+            System.out.println("Error");
+        }
+        return -1;
+    }
 }
 
-public class QueueLinkedList {
+public class QueueLinkedList<T> {
 
     private Node front;
     private Node rear;
@@ -34,7 +43,7 @@ public class QueueLinkedList {
 
     public int dequeue() {
         if (isEmpty()) return -1;
-        int returnValue = this.front.value;
+        int returnValue = this.front.getInt();
         if (this.front == this.rear) {
             this.front = null;
             this.rear = null;
@@ -45,7 +54,7 @@ public class QueueLinkedList {
     }
 
     public int top() {
-        return this.front.value;
+        return this.front.getInt();
     }
 
     public Boolean isEmpty() {
