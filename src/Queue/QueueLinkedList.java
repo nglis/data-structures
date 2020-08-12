@@ -1,21 +1,12 @@
 package Queue;
 
 class Node<T> {
-
     T data;
     Node ref;
 
     Node(T data, Node ref) {
         this.data = data;
         this.ref = ref;
-    }
-
-    public String toString() {
-        return this.data.toString();
-    }
-
-    public T getData() {
-        return data;
     }
 }
 
@@ -40,9 +31,9 @@ public class QueueLinkedList<T> {
         }
     }
 
-    public String dequeue() {
-        if (isEmpty()) return "-1";
-        String returnValue = this.front.toString();
+    public Object dequeue() {
+        if (isEmpty()) return null;
+        Object returnValue = this.front.data;
         if (this.front == this.rear) {
             this.front = null;
             this.rear = null;
@@ -52,8 +43,8 @@ public class QueueLinkedList<T> {
         return returnValue;
     }
 
-    public String top() {
-        return this.front.toString();
+    public Object top() {
+        return this.front.data;
     }
 
     public Boolean isEmpty() {
