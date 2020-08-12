@@ -2,21 +2,20 @@ package Queue;
 
 class Node<T> {
 
-    T value;
+    T data;
     Node ref;
 
-    Node(T value, Node ref) {
-        this.value = value;
+    Node(T data, Node ref) {
+        this.data = data;
         this.ref = ref;
     }
 
-    int getInt() {
-        try {
-            return Integer.parseInt(this.value.toString());
-        } catch (Exception e) {
-            System.out.println("Error");
-        }
-        return -1;
+    public String toString() {
+        return this.data.toString();
+    }
+
+    public T getData() {
+        return data;
     }
 }
 
@@ -30,8 +29,8 @@ public class QueueLinkedList<T> {
         this.rear = null;
     }
 
-    public void enqueue(int value) {
-        Node tempNode = new Node(value, null);
+    public void enqueue(T data) {
+        Node tempNode = new Node(data, null);
         if(isEmpty()) {
             this.front = tempNode;
             this.rear = this.front;
@@ -41,9 +40,9 @@ public class QueueLinkedList<T> {
         }
     }
 
-    public int dequeue() {
-        if (isEmpty()) return -1;
-        int returnValue = this.front.getInt();
+    public String dequeue() {
+        if (isEmpty()) return "-1";
+        String returnValue = this.front.toString();
         if (this.front == this.rear) {
             this.front = null;
             this.rear = null;
@@ -53,8 +52,8 @@ public class QueueLinkedList<T> {
         return returnValue;
     }
 
-    public int top() {
-        return this.front.getInt();
+    public String top() {
+        return this.front.toString();
     }
 
     public Boolean isEmpty() {
@@ -64,7 +63,7 @@ public class QueueLinkedList<T> {
     public void printAll() {
         Node tempNode = this.front;
         while(tempNode != null) {
-            System.out.println(tempNode.value);
+            System.out.println(tempNode.data);
             tempNode = tempNode.ref;
         }
     }
