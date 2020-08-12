@@ -40,21 +40,22 @@ class TestModule {
 //        bst.preOrderTraversal(bst.root); // 10, 5, 15, 12, 20, 25
 //        bst.inOrderTraversal(bst.root); // 5, 10, 12, 15, 20, 25
 //        bst.postOrderTraversal(bst.root); //5, 12, 25, 20, 15, 10
+//        bst.levelTraversal(bst.root); // 10, 5, 15, 12, 20, 25
     }
 
     @org.junit.jupiter.api.Test
     void EvaluateQueueLinkedList() {
-        QueueLinkedList queueLinkedList = new QueueLinkedList();
+        QueueLinkedList<Integer> queueLinkedList = new QueueLinkedList<>();
         assertTrue(queueLinkedList.isEmpty());
         queueLinkedList.enqueue(1);
         queueLinkedList.enqueue(2);
         queueLinkedList.enqueue(3);
 //        queueLinkedList.printAll();
-        assertEquals(1, queueLinkedList.top());
-        assertEquals(1, queueLinkedList.dequeue());
-        assertEquals(2, queueLinkedList.dequeue());
-        assertEquals(3, queueLinkedList.dequeue());
-        assertEquals(-1, queueLinkedList.dequeue());
+        assertEquals(1, (Integer) queueLinkedList.top());
+        assertEquals(1, (Integer) queueLinkedList.dequeue());
+        assertEquals(2, (Integer) queueLinkedList.dequeue());
+        assertEquals(3, (Integer) queueLinkedList.dequeue());
+        assertNull(queueLinkedList.dequeue());
         assertTrue(queueLinkedList.isEmpty());
 //        queueLinkedList.printAll();
     }

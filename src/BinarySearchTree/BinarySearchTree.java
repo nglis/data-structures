@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+import Queue.QueueLinkedList;
+
 class BSTNode {
     int value;
     BSTNode left;
@@ -9,6 +11,10 @@ class BSTNode {
         this.value = value;
         this.left = left;
         this.right = right;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 }
 
@@ -86,5 +92,22 @@ public class BinarySearchTree {
         postOrderTraversal(root.left);
         postOrderTraversal(root.right);
         System.out.println(root.value);
+    }
+
+    public void levelTraversal(BSTNode root) {
+        QueueLinkedList<BSTNode> queue = new QueueLinkedList();
+
+        queue.enqueue(root);
+
+        while(!queue.isEmpty()) {
+            BSTNode tempNode = (BSTNode) queue.dequeue();
+            System.out.println(tempNode.value);
+
+            if (tempNode.left != null)
+                queue.enqueue(tempNode.left);
+            if (tempNode.right != null)
+                queue.enqueue(tempNode.right);
+        }
+
     }
 }
