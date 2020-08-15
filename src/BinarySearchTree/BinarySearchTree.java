@@ -95,8 +95,9 @@ public class BinarySearchTree {
     }
 
     public void levelTraversal(BSTNode root) {
-        QueueLinkedList<BSTNode> queue = new QueueLinkedList();
+        if (root == null) return;
 
+        QueueLinkedList<BSTNode> queue = new QueueLinkedList();
         queue.enqueue(root);
 
         while(!queue.isEmpty()) {
@@ -108,6 +109,45 @@ public class BinarySearchTree {
             if (tempNode.right != null)
                 queue.enqueue(tempNode.right);
         }
+    }
+
+    Boolean isBstUtil(BSTNode root, int minValue, int maxValue) {
+        if(root == null) return true;
+
+        if(root.value > minValue && root.value < maxValue &&
+            isBstUtil(root.left, minValue, root.value) &&
+            isBstUtil(root.right, root.value, maxValue)) {
+            return true;
+        }
+        return false;
+    }
+
+    public Boolean isBinarySearchTree(BSTNode root) {
+        return isBstUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    /* private Boolean isSubtreeLesser(BSTNode root, int value) {
+        if (root == null) return true;
+
+        if (root.value <= value &&
+            isSubtreeLesser(root.left, value) &&
+            isSubtreeLesser(root.right, value)) {
+            return true;
+        } else {
+            return false;
+        }
 
     }
+
+    private Boolean isSubtreeGreater(BSTNode root, int value) {
+        if (root == null) return true;
+
+        if (root.value > value &&
+                isSubtreeGreater(root.left, value) &&
+                isSubtreeGreater(root.right, value)) {
+            return true;
+        } else {
+            return false;
+        }
+    } */
 }
