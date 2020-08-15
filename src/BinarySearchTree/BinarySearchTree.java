@@ -53,6 +53,15 @@ public class BinarySearchTree {
             return min(root.left);
     }
 
+    public BSTNode minNode(BSTNode root) {
+        if (root == null)
+            return null;
+        else if (root.left == null)
+            return root;
+        else
+            return minNode(root.left);
+    }
+
     public int max(BSTNode root) {
         if (root == null)
             return -1;
@@ -60,6 +69,15 @@ public class BinarySearchTree {
             return root.value;
         else
             return max(root.right);
+    }
+
+    public BSTNode maxNode(BSTNode root) {
+        if (root == null)
+            return null;
+        else if (root.right == null)
+            return root;
+        else
+            return maxNode(root.right);
     }
 
     public int height(BSTNode root) {
@@ -150,4 +168,30 @@ public class BinarySearchTree {
             return false;
         }
     } */
+
+    public BSTNode deleteNode(BSTNode root, int value) {
+        if (root == null) return null;
+        else if (value < root.value)
+            root.left = deleteNode(root.left, value);
+        else if (value > root.value)
+            root.right = deleteNode(root.right, value);
+        else {
+            // Case 1: No children
+            if (root.left == null && root.right == null) {
+                root = null;
+            }
+            // Case 2: One child
+            else if (root.left == null)
+                root = root.right;
+            else if (root.right == null)
+                root = root.left;
+            // Case 3: Two children
+            else {
+                BSTNode temp = minNode(root.right);
+                root.value = temp.value;
+                root.right = deleteNode(root.right, temp.value);
+            }
+        }
+        return root;
+    }
 }
