@@ -44,6 +44,17 @@ public class BinarySearchTree {
             return search(root.right, value);
     }
 
+    public BSTNode find(BSTNode root, int value) {
+        if (root == null)
+            return null;
+        else if (root.value == value)
+            return root;
+        else if (value <= root.value)
+            return find(root.left, value);
+        else
+            return find(root.right, value);
+    }
+
     public int min(BSTNode root) {
         if (root == null)
             return -1;
@@ -193,5 +204,31 @@ public class BinarySearchTree {
             }
         }
         return root;
+    }
+
+    public BSTNode getSuccessor(BSTNode root, int value) {
+        // Search for given node with value - O(h)
+        BSTNode current = find(root, value);
+        if (current == null) return null;
+
+        // Case 1: Node has right subtree
+        if (current.right != null) {
+            return minNode(current.right);
+        }
+
+        // Case 2: No right subtree
+        else {
+            BSTNode successor = null;
+            BSTNode ancestor = root;
+
+            while (ancestor != current) {
+                if (current.value < ancestor.value) {
+                    successor = ancestor;
+                    ancestor = ancestor.left;
+                } else
+                    ancestor = ancestor.right;
+            }
+            return successor;
+        }
     }
 }
