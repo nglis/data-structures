@@ -155,31 +155,6 @@ public class BinarySearchTree {
         return isBstUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-    /* private Boolean isSubtreeLesser(BSTNode root, int value) {
-        if (root == null) return true;
-
-        if (root.value <= value &&
-            isSubtreeLesser(root.left, value) &&
-            isSubtreeLesser(root.right, value)) {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    private Boolean isSubtreeGreater(BSTNode root, int value) {
-        if (root == null) return true;
-
-        if (root.value > value &&
-                isSubtreeGreater(root.left, value) &&
-                isSubtreeGreater(root.right, value)) {
-            return true;
-        } else {
-            return false;
-        }
-    } */
-
     public BSTNode deleteNode(BSTNode root, int value) {
         if (root == null) return null;
         else if (value < root.value)
