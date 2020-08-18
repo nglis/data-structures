@@ -34,8 +34,8 @@ class TestModule {
         assertFalse(bst.search(bst.root, 19));
         assertFalse(bst.search(bst.root, 1));
         assertFalse(bst.search(bst.root, 30));
-        assertEquals(5, bst.min(bst.root));
-        assertEquals(25, bst.max(bst.root));
+        assertEquals(5, bst.minimumValue(bst.root));
+        assertEquals(25, bst.maximumValue(bst.root));
         assertEquals(3, bst.height(bst.root));
         assertTrue(bst.isBinarySearchTree(bst.root));
 //        bst.preOrderTraversal(bst.root); // 10, 5, 15, 12, 20, 25

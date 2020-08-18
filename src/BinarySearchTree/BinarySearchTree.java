@@ -55,40 +55,40 @@ public class BinarySearchTree {
             return find(root.right, value);
     }
 
-    public int min(BSTNode root) {
+    public int minimumValue(BSTNode root) {
         if (root == null)
             return -1;
         else if (root.left == null)
             return root.value;
         else
-            return min(root.left);
+            return minimumValue(root.left);
     }
 
-    public BSTNode minNode(BSTNode root) {
+    public BSTNode minimumValueNode(BSTNode root) {
         if (root == null)
             return null;
         else if (root.left == null)
             return root;
         else
-            return minNode(root.left);
+            return minimumValueNode(root.left);
     }
 
-    public int max(BSTNode root) {
+    public int maximumValue(BSTNode root) {
         if (root == null)
             return -1;
         else if (root.right == null)
             return root.value;
         else
-            return max(root.right);
+            return maximumValue(root.right);
     }
 
-    public BSTNode maxNode(BSTNode root) {
+    public BSTNode maximumValueNode(BSTNode root) {
         if (root == null)
             return null;
         else if (root.right == null)
             return root;
         else
-            return maxNode(root.right);
+            return maximumValueNode(root.right);
     }
 
     public int height(BSTNode root) {
@@ -173,7 +173,7 @@ public class BinarySearchTree {
                 root = root.left;
             // Case 3: Two children
             else {
-                BSTNode temp = minNode(root.right);
+                BSTNode temp = minimumValueNode(root.right);
                 root.value = temp.value;
                 root.right = deleteNode(root.right, temp.value);
             }
@@ -188,7 +188,7 @@ public class BinarySearchTree {
 
         // Case 1: Node has right subtree
         if (current.right != null) {
-            return minNode(current.right);
+            return minimumValueNode(current.right);
         }
 
         // Case 2: No right subtree
