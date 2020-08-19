@@ -162,16 +162,16 @@ public class BinarySearchTree {
         else if (value > root.value)
             root.right = deleteNode(root.right, value);
         else {
-            // Case 1: No children
+            // Case 1: Node has no children
             if (root.left == null && root.right == null) {
                 root = null;
             }
-            // Case 2: One child
+            // Case 2: Node has one child
             else if (root.left == null)
                 root = root.right;
             else if (root.right == null)
                 root = root.left;
-            // Case 3: Two children
+            // Case 3: Node has two children
             else {
                 BSTNode temp = minimumValueNode(root.right);
                 root.value = temp.value;
@@ -191,7 +191,7 @@ public class BinarySearchTree {
             return minimumValueNode(current.right);
         }
 
-        // Case 2: No right subtree
+        // Case 2: Node does not have a right subtree
         else {
             BSTNode successor = null;
             BSTNode ancestor = root;
