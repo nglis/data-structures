@@ -123,7 +123,7 @@ public class BinarySearchTree {
         System.out.println(root.value);
     }
 
-    public void levelTraversal(BSTNode root) {
+    public void levelOrderTraversal(BSTNode root) {
         if (root == null) return;
 
         QueueLinkedList<BSTNode> queue = new QueueLinkedList();
