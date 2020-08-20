@@ -126,7 +126,7 @@ public class BinarySearchTree {
     public void levelOrderTraversal(BSTNode root) {
         if (root == null) return;
 
-        QueueLinkedList<BSTNode> queue = new QueueLinkedList();
+        QueueLinkedList<BSTNode> queue = new QueueLinkedList<BSTNode>();
         queue.enqueue(root);
 
         while(!queue.isEmpty()) {
