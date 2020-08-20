@@ -44,7 +44,7 @@ public class BinarySearchTree {
             return search(root.right, value);
     }
 
-    public BSTNode find(BSTNode root, int value) {
+    private BSTNode find(BSTNode root, int value) {
         if (root == null)
             return null;
         else if (root.value == value)
@@ -64,7 +64,7 @@ public class BinarySearchTree {
             return minimumValue(root.left);
     }
 
-    public BSTNode minimumValueNode(BSTNode root) {
+    private BSTNode minimumValueNode(BSTNode root) {
         if (root == null)
             return null;
         else if (root.left == null)
@@ -82,7 +82,7 @@ public class BinarySearchTree {
             return maximumValue(root.right);
     }
 
-    public BSTNode maximumValueNode(BSTNode root) {
+    private BSTNode maximumValueNode(BSTNode root) {
         if (root == null)
             return null;
         else if (root.right == null)
@@ -99,7 +99,7 @@ public class BinarySearchTree {
         return Integer.max(height(root.left), height(root.right)) + 1;
     }
 
-    public void preOrderTraversal(BSTNode root) {
+    private void preOrderTraversal(BSTNode root) {
         if (root == null) return;
 
         System.out.println(root.value);
@@ -107,7 +107,7 @@ public class BinarySearchTree {
         preOrderTraversal(root.right);
     }
 
-    public void inOrderTraversal(BSTNode root) {
+    private void inOrderTraversal(BSTNode root) {
         if (root == null) return;
 
         inOrderTraversal(root.left);
@@ -115,7 +115,7 @@ public class BinarySearchTree {
         inOrderTraversal(root.right);
     }
 
-    public void postOrderTraversal(BSTNode root) {
+    private void postOrderTraversal(BSTNode root) {
         if (root == null) return;
 
         postOrderTraversal(root.left);
@@ -140,7 +140,7 @@ public class BinarySearchTree {
         }
     }
 
-    Boolean isBstUtil(BSTNode root, int minValue, int maxValue) {
+    private Boolean isBstUtil(BSTNode root, int minValue, int maxValue) {
         if(root == null) return true;
 
         if(root.value > minValue && root.value < maxValue &&
