@@ -140,12 +140,12 @@ public class BinarySearchTree {
         }
     }
 
-    private Boolean isBstUtil(BSTNode root, int minValue, int maxValue) {
+    private Boolean isBstUtil(BSTNode root, int minBoundary, int maxBoundary) {
         if(root == null) return true;
 
-        return root.value > minValue && root.value < maxValue &&
-            isBstUtil(root.left, minValue, root.value) &&
-            isBstUtil(root.right, root.value, maxValue);
+        return root.value > minBoundary && root.value < maxBoundary &&
+            isBstUtil(root.left, minBoundary, root.value) &&
+            isBstUtil(root.right, root.value, maxBoundary);
     }
 
     public Boolean isBinarySearchTree(BSTNode root) {
