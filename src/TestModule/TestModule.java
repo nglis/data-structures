@@ -38,12 +38,7 @@ class TestModule {
         assertEquals(25, bst.maximumValue(bst.root));
         assertEquals(3, bst.height(bst.root));
         assertTrue(bst.isBinarySearchTree(bst.root));
-//        bst.preOrderTraversal(bst.root); // 10, 5, 15, 12, 20, 25
-//        bst.inOrderTraversal(bst.root); // 5, 10, 12, 15, 20, 25
-//        bst.postOrderTraversal(bst.root); //5, 12, 25, 20, 15, 10
-//        bst.levelTraversal(bst.root); // 10, 5, 15, 12, 20, 25
         bst.deleteNode(bst.root, 12);
-//        bst.preOrderTraversal(bst.root); // 10, 5, 15, 20, 25
     }
 
     @org.junit.jupiter.api.Test
