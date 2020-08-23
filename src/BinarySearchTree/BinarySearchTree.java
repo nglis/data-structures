@@ -73,6 +73,17 @@ public class BinarySearchTree {
             return minimumValueNode(root.left);
     }
 
+    private BSTNode minimumValueNodeIterative(BSTNode root) {
+        if (root == null) {
+            return root;
+        }
+        while (root.left != null) {
+            root = root.left;
+        }
+
+        return root;
+    }
+
     public int maximumValue(BSTNode root) {
         if (root == null)
             return -1;
