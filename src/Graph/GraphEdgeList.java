@@ -36,7 +36,7 @@ class Vertex {
     }
 }
 
-public class Graph {
+public class GraphEdgeList {
     ArrayList vertices = new ArrayList<Vertex>();
     ArrayList edges = new ArrayList<Edge>();
 }
