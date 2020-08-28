@@ -7,6 +7,6 @@ public class GraphAdjacencyList {
      */
 
     /* Implementation could use a single array of 1D arrays with pointers
-     * to endpoint nodes.
+     * to endpoint nodes for each node.
      */
 }
